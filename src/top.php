@@ -50,7 +50,7 @@ $musicians = $queryMusicians->fetchAll(PDO::FETCH_ASSOC);
                 <!-- セレクトボックス -->
                 <form action="top.php" method="post">
                     <div>
-                        <label for="all">絞り込み　※更新した場合すべてを選択</label>
+                        <label for="all">絞り込み　※画面遷移した場合はすべてを選択</label>
                         <select name="musician_name" id="musician_name">
                             <option value="all">全て</option>
                             <?php
