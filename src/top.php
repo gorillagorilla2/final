@@ -7,6 +7,10 @@ require 'db_connect.php';
 $pdo = new PDO($connect, USER, PASS);
 
 // 選択された作曲者に基づいて楽曲を絞り込む処理
+
+$data = [];
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['musician_name']) && $_POST['musician_name'] !== 'all') {
         $selectedMusicianId = $_POST['musician_name'];
@@ -46,7 +50,7 @@ $musicians = $queryMusicians->fetchAll(PDO::FETCH_ASSOC);
                 <!-- セレクトボックス -->
                 <form action="top.php" method="post">
                     <div>
-                        <label for="all">全て</label>
+                        <label for="all">絞り込み　※更新した場合すべてを選択</label>
                         <select name="musician_name" id="musician_name">
                             <option value="all">全て</option>
                             <?php
