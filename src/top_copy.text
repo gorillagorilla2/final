@@ -1,0 +1,22 @@
+<?php session_start(); ?>
+<?php require 'head.php'; ?>
+<?php require 'db_connect.php'; ?>
+
+<body>
+    <?php
+    $pdo = new PDO($connect, USER, PASS);
+    foreach ($pdo->query('select * from Music') as $row) {
+        $stmt = $pdo->prepare('select * from Musician where musician_id=?');
+        $stmt->execute([$row['musician_id']]);
+        if(empty($sql->fetchAll())){
+        echo '<p>';
+        // echo "<a href="$row['music_link']">f</a>"
+        echo $row['music_name'], '<br>';
+        echo $stmt['musician_id']['musician_name'], ':';
+        // echo''
+    }
+}
+    ?>
+</body>
+
+</html>

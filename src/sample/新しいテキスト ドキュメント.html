@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楽曲情報入力</title>
+    <style>
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<form action="submit_form.php" method="post">
+    <table>
+        <tr>
+            <th>作曲者名</th>
+            <td>
+                <select name="composer" required>
+                    <option value="" disabled selected>選択してください</option>
+                    <option value="Composer1">Composer 1</option>
+                    <option value="Composer2">Composer 2</option>
+                    <!-- 他の作曲者のオプションを追加することができます -->
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>楽曲名</th>
+            <td><input type="text" name="songName" required></td>
+        </tr>
+    </table>
+    <input type="submit" value="送信">
+</form>
+
+</body>
+</html>
